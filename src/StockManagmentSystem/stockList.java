@@ -2,6 +2,10 @@ package StockManagmentSystem;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
+// (C) Cameron Mackie 2026. UweID 25014567
+// Project for OOSD1 module on the Software Eng course At the University of the West of England (UWE)
+
+
 public class stockList extends JFrame {
     private JPanel stockPannel;
     private JButton searchProductNameButton;
@@ -14,8 +18,7 @@ public class stockList extends JFrame {
     public void loadWindow(ActionListener listener) {
 
         listOfStock.setModel(listOfStockList);
-
-        setTitle("ALPHA - Cameron's stock management");
+        setTitle("Cameron's stock management System");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(stockPannel);
         pack();
@@ -35,5 +38,12 @@ public class stockList extends JFrame {
         return listOfStock.getSelectedValue();
     }
 
+    public Integer getSelectedIndex(){
+        return listOfStock.getSelectedIndex();
+    };
+
+    public void replaceItemAtIndex(Integer index,StockItem unit){
+        listOfStockList.set(index,unit);
+    }
 
 }

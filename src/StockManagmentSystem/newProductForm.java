@@ -1,6 +1,7 @@
 package StockManagmentSystem;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class newProductForm extends JFrame {
@@ -20,10 +21,20 @@ public class newProductForm extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-        VatRate.setText(".20");
         abortButton.addActionListener(listener);
         saveButton.addActionListener(listener);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        VatRate.setText("20");
+
+        abortButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+
     }
+
+    public double getVatRate(){return Double.parseDouble(VatRate.getText());}
 
     public String getProductCode(){
         return ProductCode.getText();

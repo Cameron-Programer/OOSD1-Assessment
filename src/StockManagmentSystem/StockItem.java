@@ -1,6 +1,12 @@
 package StockManagmentSystem;
 
-class StockItem {
+// (C) Cameron Mackie 2026. UweID 25014567
+// Project for OOSD1 module on the Software Eng course At the University of the West of England (UWE)
+
+
+import javax.swing.*;
+
+public class StockItem {
     private String stockCode;
     private String stockName;
     private String stockDescription;
@@ -38,11 +44,15 @@ class StockItem {
     }
 
     public void setStockLevel(int stockLevel) {
-        this.stockLevel = stockLevel;
+        if (stockLevel>100){
+            JOptionPane.showMessageDialog(null,"Error: You cannot stock more than 100 units");
+        }else {
+            this.stockLevel = stockLevel;
+        }
     }
 
     public double getVatRate() {
-        return vatRate;
+        return vatRate*100;
     }
 
     public double getStockPrice() {
@@ -96,17 +106,21 @@ class StockItem {
 
     //Used name stockToString rather than toString as IDE was giving warning that toString would overide a java.lang function
     public String toString() {
-        return ("Stock code:" + stockCode + "\nStock name:" + stockName + "\nStock level:" + String.valueOf(stockLevel) + "\nVat:" + String.valueOf(vatRate) + "%");
+        //return ("Stock code:" + getStockCode() + " \nStock name:" + getStockName() +" \nDescription: "+getStockDescription()+" \nStock level:" + String.valueOf(getStockLevel()) + " \nVat:" + String.valueOf(getVatRate()) + "%" + " \nPrice: "+getStockPrice()+" \nVAT Price: "+getPriceWithVAT());
+        return("Stock code: "+getStockCode()+" Stock Name: "+getStockName());
+    }
+
+    public void consoleOutput(){
+        System.out.println("Stock code:" + getStockCode() + " \nStock name:" + getStockName() +" \nDescription: "+getStockDescription()+" \nStock level:" + String.valueOf(getStockLevel()) + " \nVat:" + String.valueOf(getVatRate()) + "%" + " \nPrice: "+getStockPrice()+" \nVAT Price: "+getPriceWithVAT());
     }
 
     public void setVatRate(double vatRate) {
         System.out.println(vatRate);
         if (vatRate >= 1) {
-            this.vatRate = vatRate / 100;
+            this.vatRate = (vatRate / 100);
         } else {
             this.vatRate = vatRate;
         }
-        System.out.println(this.vatRate);
     }
 
 }
