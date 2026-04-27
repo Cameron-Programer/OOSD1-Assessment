@@ -1,11 +1,15 @@
 # Stock Management System
-Introduction to Object Orientated Systems Year 1 Assessment 2
+`OOSD Y1 Java Assessment`
 
 ---
 
 ### Usage
 
 ![](documentation/images/GuiDesignV1.drawio.png)
+
+### UML
+
+![](documentation/images/UmlDiagramV1.drawio.png)
 
 ---
 ### Deliverables (Checklist)
