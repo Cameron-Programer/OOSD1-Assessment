@@ -34,6 +34,7 @@ public class productOverview extends JFrame {
         sellItemButton.addActionListener(listener);
         addStockButton.addActionListener(listener);
 
+
         unitsInStockText.setText(String.valueOf(unit.getStockLevel()));
         costWithVAT.setText(String.valueOf(unit.getPriceWithVAT()));
         productNameText.setText(unit.getStockName());

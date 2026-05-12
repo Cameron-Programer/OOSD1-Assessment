@@ -14,10 +14,10 @@ public class newProductForm extends JFrame {
     private JButton abortButton;
     private JPanel NewProductWindow;
 
-
     public void loadWindow(ActionListener listener) {
         setTitle("New Stock Creation Wizard");
         setContentPane(NewProductWindow);
+
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
@@ -25,6 +25,7 @@ public class newProductForm extends JFrame {
         saveButton.addActionListener(listener);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         VatRate.setText("20");
+
 
         abortButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -13,21 +13,30 @@ public class TestNavSys implements ActionListener {
     private newProductForm newProductWindow = new newProductForm();
     private productOverview productWindow;
 
-    public void init() {
+    public void main() {
         //StockItem unit = new StockItem("VW01",32,19.22);
 
         stockWindow.loadWindow(this);
         //stockWindow.addItemtoList(unit);
     }
 
+    // This section of code is reacting to button presses, Depending on what the buton says changes the behaviour of the system
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
+            /*
+            This will run if the Add new stock button on the list is pressed
+            It simply creates a new instance of the newProdcutForm and loads the window.
+            This allows the user to input the infomation required to create a new instance of StockItem
+            */
             case ("Add new stock"):
                 newProductWindow = new newProductForm();
                 newProductWindow.loadWindow(this);
                 break;
 
+            /*
+            This will run if the Save button is pressed in the
+             */
             case ("Save"):
                 stockWindow.setVisible(true);
                 newProductWindow.dispose();

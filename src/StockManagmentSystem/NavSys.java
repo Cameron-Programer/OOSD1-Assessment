@@ -1,6 +1,6 @@
 package StockManagmentSystem;
 
-public class NavSys extends StockItem{
+public class NavSys extends StockItem {
 
     // (C) Cameron Mackie 2026. UweID 25014567
     // Project for OOSD1 module on the Software Eng course At the University of the West of England (UWE)
@@ -10,13 +10,23 @@ public class NavSys extends StockItem{
         super(stockCode, stockLevel, stockPrice);
     }
 
+    // This is testing polymorphism
+    public void polyTest(String line1, String line2) {
+        System.out.println(line1 + line2);
+    }
+
+    public void polyTest(String line) {
+        System.out.println(line);
+    }
+
+    // This is overriding the getters for stock name and stock description.
     @Override
-    public String getStockName(){
+    public String getStockName() {
         return ("Navigation system");
     }
 
     @Override
-    public String getStockDescription(){
+    public String getStockDescription() {
         return ("GeoVision Sat Nav");
     }
 }
