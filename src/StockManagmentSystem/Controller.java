@@ -66,12 +66,6 @@ public class Controller implements ActionListener {
 
                boolean changeFlag = false;
                String confirmMessage = "Please confirm the following changes:\n";
-               /*
-               if (target.getStockName() != productWindow.getProductNameText()){
-                   confirmMessage = ("Product Name changed from: "+confirmMessage+target.getStockName()+" -> "+productWindow.getProductNameText()+"\n");
-                   changeFlag = true;
-               }
-               */
                if (target.getStockPrice() != productWindow.getUnitCost()){
                    confirmMessage = (confirmMessage+"Unit Cost changed from: "+target.getStockPrice()+" -> "+productWindow.getUnitCost()+"\n");
                    changeFlag = true;
@@ -94,19 +88,20 @@ public class Controller implements ActionListener {
                        target.setStockPrice(productWindow.getUnitCost());
                        stockWindow.replaceItemAtIndex(targetPos, target);
                        productWindow.refresh(target);
+                   }else{
+                       productWindow.refresh(target);
                    }
-               }else {
-                   target.setVatRate(productWindow.getVatRate());
-                   target.setStockDescription(productWindow.getItemDescriptionText());
-                   target.setStockLevel(productWindow.getUnitsInStock());
-                   target.setStockPrice(productWindow.getUnitCost());
-                   stockWindow.replaceItemAtIndex(targetPos, target);
-                   productWindow.dispose();
                }
                break;
             case ("Sell item"):
                 stockWindow.getSelectedValue().sellStock(Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the number of units you want to sell:")));
                 productWindow.refresh(stockWindow.getSelectedValue());
+                break;
+
+            case ("Add Stock"):
+                stockWindow.getSelectedValue().addStock(Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the number of units you want to add:")));
+                productWindow.refresh(stockWindow.getSelectedValue());
+                break;
 
 
             default:

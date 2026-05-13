@@ -4,7 +4,7 @@ package StockManagmentSystem;
 // Project for OOSD1 module on the Software Eng course At the University of the West of England (UWE)
 
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class StockItem {
     private String stockCode;
@@ -20,6 +20,14 @@ public class StockItem {
         this.stockCode = stockCode;
         this.stockLevel = stockLevel;
         this.stockPrice = stockPrice;
+    }
+
+
+    public StockItem(String stockCode, int stockLevel, double stockPrice, double vatRate){
+        this.stockCode = stockCode;
+        this.stockLevel = stockLevel;
+        this.stockPrice = stockPrice;
+        this.vatRate = vatRate;
     }
 
     // Getters and setters
@@ -59,6 +67,9 @@ public class StockItem {
     public void setStockLevel(int stockLevel) {
         if (stockLevel>100){
             JOptionPane.showMessageDialog(null,"Error: You cannot stock more than 100 units");
+        }else if (stockLevel< 0)
+        {
+            JOptionPane.showMessageDialog(null,"Error: You cannot stock more less than 0 unit");
         }else {
             this.stockLevel = stockLevel;
         }

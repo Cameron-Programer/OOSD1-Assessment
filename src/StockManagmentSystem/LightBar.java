@@ -11,9 +11,9 @@ public class LightBar extends StockItem{
     }
 
     public LightBar(String stockCode, int stockLevel, double stockPrice, int lumins,int vatRate) {
-        super(stockCode, stockLevel, stockPrice);
+        super(stockCode, stockLevel, stockPrice,vatRate);
         this.lumins = lumins;
-        this.setVatRate(vatRate);
+
 
     }
 

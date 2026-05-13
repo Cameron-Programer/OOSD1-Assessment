@@ -49,59 +49,73 @@ public class TestNavSys implements ActionListener {
             case ("Open"):
                 if (productWindow != null){
                     productWindow.dispose();
-            }
+                }
                 System.out.println(stockWindow.getSelectedValue());
                 productWindow = new productOverview();
                 productWindow.loadWindow(this, stockWindow.getSelectedValue());
                 break;
             case ("Update"):
-               StockItem target = stockWindow.getSelectedValue();
-               Integer targetPos = stockWindow.getSelectedIndex();
+                StockItem target = stockWindow.getSelectedValue();
+                Integer targetPos = stockWindow.getSelectedIndex();
 
-               //Confirming changes
-               boolean changeFlag = false;
-               String confirmMessage = "Please confirm the following changes:\n";
+                //Confirming changes, This just compares the current Values of the Object and the values of the GUI,
+                // if they are diffrent we know that the user has made a change, then we add that to the confirmMessage string so
+                // they can confirm that is what they wanted to change.
+
+                // We are using a flag system to check if any changes had been made, if no changes are made the flag will remain false so
+                // the popup will not appear since there is nothing to confirm.
+
+                boolean changeFlag = false;
+                String confirmMessage = "Please confirm the following changes:\n";
                /*
                if (target.getStockName() != productWindow.getProductNameText()){
                    confirmMessage = ("Product Name changed from: "+confirmMessage+target.getStockName()+" -> "+productWindow.getProductNameText()+"\n");
                    changeFlag = true;
                }
                */
-               if (target.getStockPrice() != productWindow.getUnitCost()){
-                   confirmMessage = (confirmMessage+"Unit Cost changed from: "+target.getStockPrice()+" -> "+productWindow.getUnitCost()+"\n");
-                   changeFlag = true;
-               }
-               if (target.getVatRate() != productWindow.getVatRate()){
-                   confirmMessage = (confirmMessage+"VAT rate changed from: "+target.getVatRate()+" -> "+productWindow.getVatRate()+"\n");
-                   changeFlag = true;
-               }
-               if (target.getStockLevel() != productWindow.getUnitsInStock()){
-                   confirmMessage = (confirmMessage+"Stock level changed from: "+target.getStockLevel()+" -> "+productWindow.getUnitsInStock()+"\n");
-                   changeFlag = true;
-               }
+                if (target.getStockPrice() != productWindow.getUnitCost()){
+                    confirmMessage = (confirmMessage+"Unit Cost changed from: "+target.getStockPrice()+" -> "+productWindow.getUnitCost()+"\n");
+                    changeFlag = true;
+                }
+                if (target.getVatRate() != productWindow.getVatRate()){
+                    confirmMessage = (confirmMessage+"VAT rate changed from: "+target.getVatRate()+" -> "+productWindow.getVatRate()+"\n");
+                    changeFlag = true;
+                }
+                if (target.getStockLevel() != productWindow.getUnitsInStock()){
+                    confirmMessage = (confirmMessage+"Stock level changed from: "+target.getStockLevel()+" -> "+productWindow.getUnitsInStock()+"\n");
+                    changeFlag = true;
+                }
 
-               if (changeFlag){
-                   int userConfirmationResult = JOptionPane.showOptionDialog(null,confirmMessage,"Change Confirmation",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
-                   if (userConfirmationResult == JOptionPane.YES_OPTION){
-                       target.setVatRate(productWindow.getVatRate());
-                       target.setStockDescription(productWindow.getItemDescriptionText());
-                       target.setStockLevel(productWindow.getUnitsInStock());
-                       target.setStockPrice(productWindow.getUnitCost());
-                       stockWindow.replaceItemAtIndex(targetPos, target);
-                       productWindow.refresh(target);
-                   }
-               }else {
-                   target.setVatRate(productWindow.getVatRate());
-                   target.setStockDescription(productWindow.getItemDescriptionText());
-                   target.setStockLevel(productWindow.getUnitsInStock());
-                   target.setStockPrice(productWindow.getUnitCost());
-                   stockWindow.replaceItemAtIndex(targetPos, target);
-                   productWindow.dispose();
-               }
-               break;
+                if (changeFlag){
+                    int userConfirmationResult = JOptionPane.showOptionDialog(null,confirmMessage,"Change Confirmation",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
+                    if (userConfirmationResult == JOptionPane.YES_OPTION){
+                        target.setVatRate(productWindow.getVatRate());
+                        target.setStockDescription(productWindow.getItemDescriptionText());
+                        target.setStockLevel(productWindow.getUnitsInStock());
+                        target.setStockPrice(productWindow.getUnitCost());
+                        stockWindow.replaceItemAtIndex(targetPos, target);
+                        productWindow.refresh(target);
+                    }else{
+                        productWindow.refresh(target);
+                    }
+                }else {
+                    target.setVatRate(productWindow.getVatRate());
+                    target.setStockDescription(productWindow.getItemDescriptionText());
+                    target.setStockLevel(productWindow.getUnitsInStock());
+                    target.setStockPrice(productWindow.getUnitCost());
+                    stockWindow.replaceItemAtIndex(targetPos, target);
+                    productWindow.dispose();
+                }
+                break;
             case ("Sell item"):
                 stockWindow.getSelectedValue().sellStock(Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the number of units you want to sell:")));
                 productWindow.refresh(stockWindow.getSelectedValue());
+                break;
+
+            case ("Add Stock"):
+                stockWindow.getSelectedValue().addStock(Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the number of units you want to add:")));
+                productWindow.refresh(stockWindow.getSelectedValue());
+                break;
 
 
             default:
@@ -110,4 +124,3 @@ public class TestNavSys implements ActionListener {
         }
     }
 }
-

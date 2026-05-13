@@ -4,15 +4,45 @@
 ---
 ### Setup
 
-
+1. Download ZIP 
+2. Extract Zip 
+3. 
 
 ### Usage
 
-![](documentation/images/GuiDesignV1.drawio.png)
+![](documentation/images/GuiDesignV2.drawio.png)
 
 ### UML
 
 ![](documentation/images/UmlDiagramV1.drawio.png)
+
+
+---
+## Bibliography
+
+## Video tutorials
+| Title                                                | Author                     | Link                                      | Accessed date        |
+|------------------------------------------------------|----------------------------|-------------------------------------------|----------------------|
+| Learn INTERFACES in 6 minutes!.                      | BroCode(2024).             |Available from https://youtu.be/c2sTQk9opO8| [Accessed 14 April 2026] 
+| Learn Java arraylists in 9 minutes!.                 | BroCode(2024).             |Available from https://youtu.be/wsTSREgCE5E| [Accessed 15 April 2026] 
+| Java login system.                                   | BroCode(2020).             |Available from https://youtu.be/Hiv3gwJC5kw| [Accessed 15 April 2026] 
+| Java static keyword.                                 | BroCode(2020).             |Available from https://youtu.be/wa1HzkMqY9A| [Accessed 16 April 2026] 
+| Java method overriding.                              | BroCode(2020).             |Available from https://youtu.be/E-0MMeNi5Cw| [Accessed 16 April 2026] 
+| Java polymorphism.                                   | BroCode(2020).             |Available from https://youtu.be/2hkngtWLGvE| [Accessed 16 April 2026] 
+| ActionListener \| Java Swing Tutorial for Beginners. | Java Code Junkie (2021).   |Available from https://youtu.be/ObVnyA8ar6Q| [Accessed 16 April 2026]
+| Separating GUI and Logic code.                       | Nathaly Verwaal(2017).     |Available from https://youtu.be/881IYh7TQso| [Accessed 16 April 2026]
+| Java super keyword                                   | BroCode(2020).             |Available from https://youtu.be/oKZnHNM9Ew4| [Accessed 21 April 2026]
+
+
+
+### Key text tutorials 
+Build UI using Swing. JetBrains(2025). Available from https://www.jetbrains.com/help/idea/design-gui-using-swing.html [Accessed 27 March 2026]
+
+### Tools Used 
+- JetBrains IntelliJ IDEA 2025.2.2 (Ultimate Edition). Available from https://www.jetbrains.com/idea/
+- JetBrains Swing UI Designer 261.22158.182 .          Available from https://plugins.jetbrains.com/plugin/25304-swing-ui-designer
+- Draw.io                                              Available from https://www.drawio.com
+
 
 ---
 ### Deliverables (Checklist)
@@ -33,6 +63,20 @@ describing
 - [ ] The code must include 
   - [ ] clear and concise comments
   - [ ] docstrings explaining the purpose and functionality of all functions and classes.
+
+#### Testing
+
+| Test Case | What will be done                     | Expected Result                                                                                      | Actual Result                                                                                                        | PASS/FAIL |
+| --------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
+| GUI1      | Create multiple StockItem objects     | List will have more than one row                                                                     | ![[Pasted image 20260418201745.png]]                                                                                 | PASS      |
+| GUI2      | Add stock <br>From 6 to 10            | Overview will show the updated stock when updated and reopened                                       | ![[Pasted image 20260418201931.png]]                                                                                 | PASS      |
+| GUI3      | Sell Stock                            | TODO                                                                                                 |                                                                                                                      | FAIL      |
+| GUI4      | Change item prices<br>From 100 to 200 | Price will show 200 and price inc VAT will show 240 after updating and reopening the overview        | ![[Pasted image 20260418202101.png]]                                                                                 | PASS      |
+| GUI5      | Display updated item details          | Make any change and show it as working in the GUI.<br>In this test I changed the stock from 10 to 20 | ![[Pasted image 20260418202148.png]]<br>![[Pasted image 20260418202248.png]]<br>![[Pasted image 20260418202303.png]] |           |
+|           |                                       |                                                                                                      |                                                                                                                      |           |
+
+
+
 
 #### Test Cases
 

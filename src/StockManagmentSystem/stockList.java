@@ -8,8 +8,6 @@ import java.awt.event.ActionListener;
 
 public class stockList extends JFrame {
     private JPanel stockPannel;
-    private JButton searchProductNameButton;
-    private JButton searchStockNumberButton;
     private JList<StockItem> listOfStock;
     private JButton addNewStockButton;
     private JButton openButton;
@@ -45,5 +43,6 @@ public class stockList extends JFrame {
     public void replaceItemAtIndex(Integer index,StockItem unit){
         listOfStockList.set(index,unit);
     }
+
 
 }

@@ -10,14 +10,6 @@ public class NavSys extends StockItem {
         super(stockCode, stockLevel, stockPrice);
     }
 
-    // This is testing polymorphism
-    public void polyTest(String line1, String line2) {
-        System.out.println(line1 + line2);
-    }
-
-    public void polyTest(String line) {
-        System.out.println(line);
-    }
 
     // This is overriding the getters for stock name and stock description.
     @Override
