@@ -3,10 +3,14 @@
 
 ---
 ### Setup
-
+JRE 25
 1. Download ZIP 
 2. Extract Zip 
-3. 
+3. Either compile the .java files yourself from the src folder or Extract files from the second zip.
+4. Open your terminal in the directory where you have extracted that second zip
+5. Type `java StockManagmentSystem.Controller` for the part 1 code
+6. Type `java StockManagmentSystem.TestNavSys` for the part 2 code
+7. Type `java StockManagmentSystem.TestPolymorphism` for the part 3 code
 
 ### Usage
 
@@ -50,41 +54,27 @@ This is a checklist to ensure that all the deliverables are present before submi
 #### Github
 - [ ] The GitHub repository should have a proper README file
 describing 
-  - [ ] the project, 
-  - [ ] setup instructions 
-  - [ ] usage details
+  - [/] the project, 
+  - [/] setup instructions 
+  - [/] usage details
 
 
 - [ ] The repository should include 
-  - [ ] the completed project source code for Java, 
-  - [ ] strictly following PEP8 style guidelines to ensure clean, readable, and maintainable code.- 
+  - [/] the completed project source code for Java, 
+  - [/] strictly following PEP8 style guidelines to ensure clean, readable, and maintainable code.- 
 
 
-- [ ] The code must include 
-  - [ ] clear and concise comments
+- [/] The code must include 
+  - [/] clear and concise comments
   - [ ] docstrings explaining the purpose and functionality of all functions and classes.
-
-#### Testing
-
-| Test Case | What will be done                     | Expected Result                                                                                      | Actual Result                                                                                                        | PASS/FAIL |
-| --------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
-| GUI1      | Create multiple StockItem objects     | List will have more than one row                                                                     | ![[Pasted image 20260418201745.png]]                                                                                 | PASS      |
-| GUI2      | Add stock <br>From 6 to 10            | Overview will show the updated stock when updated and reopened                                       | ![[Pasted image 20260418201931.png]]                                                                                 | PASS      |
-| GUI3      | Sell Stock                            | TODO                                                                                                 |                                                                                                                      | FAIL      |
-| GUI4      | Change item prices<br>From 100 to 200 | Price will show 200 and price inc VAT will show 240 after updating and reopening the overview        | ![[Pasted image 20260418202101.png]]                                                                                 | PASS      |
-| GUI5      | Display updated item details          | Make any change and show it as working in the GUI.<br>In this test I changed the stock from 10 to 20 | ![[Pasted image 20260418202148.png]]<br>![[Pasted image 20260418202248.png]]<br>![[Pasted image 20260418202303.png]] |           |
-|           |                                       |                                                                                                      |                                                                                                                      |           |
-
-
-
 
 #### Test Cases
 
-- [ ] Suitable test cases have been identified and documented
+- [/] Suitable test cases have been identified and documented
  Total more than 10 and less than 15 testcases provided for the project
 
 #### UML diagrams
-- [ ] Provide appropriate UML diagrams related to the project with appropriate connections
+- [.] Provide appropriate UML diagrams related to the project with appropriate connections
 
 #### Video Demo
 - [ ] You are required to submit a 5-minute video demonstration, in
